@@ -12,8 +12,14 @@ variable "vpc_id" {
 
 variable "vpc_cidr" {
     description = "CIDR of the vpc"
-    default = null
+    default = "10.0.0.0/8"
     type = string
+}
+
+variable "subnets" {
+  description = "subnets for the endpoints"
+  default = null
+  type = list(string)
 }
 
 variable "private_dns_enabled" {
@@ -21,7 +27,6 @@ variable "private_dns_enabled" {
     default = false
     type = bool
 }
-
 
 variable "ssm_endpoints" {
   description = "SSM Endpoint Service Names"
